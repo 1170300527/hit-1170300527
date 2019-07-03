@@ -72,9 +72,10 @@ public class MonkeyGenerator implements Runnable {
   }
   
    private void checkRep(){
-    assert time > 0 : "time should be >=0";
-    assert total > 0 : "the total num of monkey should be > 0";
-    assert k > 0 : "the monkey num generated each time should be > 0";
+    assert this.time > 0 : "time should be >=0";
+    assert this.total > 0 : "the total num of monkey should be > 0";
+    assert this.k > 0 : "the monkey num generated each time should be > 0";
+    assert this.maxSpeed > 0 && this.maxSpeed<=500 : "the max speed should >0 <=500";
   }
   
 }
