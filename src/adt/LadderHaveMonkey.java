@@ -32,7 +32,7 @@ public class LadderHaveMonkey {
   /**
    * Update current direction.
    */
-  public void setCurrentDirection() {
+  public synchronized void setCurrentDirection() {
     if (monkeys.size() == 0) {
       currentDirection = 'z';
     } else {
