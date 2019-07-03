@@ -14,10 +14,10 @@ public class MonkeyGenerator implements Runnable {
   private List<Monkey> monkeyList = new ArrayList<Monkey>();
   
   /**
-   * ¹¹Ôì·½·¨.
-   * @param time ¼ä¸ôÊ±¼ä
-   * @param total ºï×Ó×ÜÊı
-   * @param k Ã¿´Î²úÉúºï×ÓÊıÁ¿
+   * æ„é€ æ–¹æ³•.
+   * @param time é—´éš”æ—¶é—´
+   * @param total çŒ´å­æ€»æ•°
+   * @param k æ¯æ¬¡äº§ç”ŸçŒ´å­æ•°é‡
    */
   public MonkeyGenerator(int time, int total,int k, int maxSpeed) {
     super();
@@ -25,6 +25,7 @@ public class MonkeyGenerator implements Runnable {
     this.total = total;
     this.k = k;
     this.maxSpeed = maxSpeed;
+    checkRep();
   }
 
   @Override
@@ -61,13 +62,19 @@ public class MonkeyGenerator implements Runnable {
   }
   
   /**
-   * ·µ»ØÉú³ÉµÄºï×Ó£¬²¢Çå¿Õ.
-   * @return ºï×Ó
+   * è¿”å›ç”Ÿæˆçš„çŒ´å­ï¼Œå¹¶æ¸…ç©º.
+   * @return çŒ´å­
    */
   public List<Monkey> getMokeyList() {
     List<Monkey> monkeys = new ArrayList<Monkey>(monkeyList);
     monkeyList.clear();
     return monkeys;
+  }
+  
+   private void checkRep(){
+    assert time > 0 : "time should be >=0";
+    assert total > 0 : "the total num of monkey should be > 0";
+    assert k > 0 : "the monkey num generated each time should be > 0";
   }
   
 }
