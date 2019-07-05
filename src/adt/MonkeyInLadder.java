@@ -40,6 +40,8 @@ public class MonkeyInLadder {
 
   public void setH(int h) {
     this.h = h;
+    checkRep();//mutator
+    return ;
   }
 
   public Ladder getLadder() {
@@ -48,6 +50,8 @@ public class MonkeyInLadder {
   
   public void setLadder(Ladder ladder) {
     this.ladder = ladder;
+    checkRep();//mutator
+    return ;
   }
 
   @Override
