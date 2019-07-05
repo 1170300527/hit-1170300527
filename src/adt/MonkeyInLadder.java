@@ -39,7 +39,10 @@ public class MonkeyInLadder {
   }
 
   public void setH(int h) {
+    assert h >= 1;
     this.h = h;
+    checkRep();//mutator
+    return ;
   }
 
   public Ladder getLadder() {
@@ -47,7 +50,10 @@ public class MonkeyInLadder {
   }
   
   public void setLadder(Ladder ladder) {
+    assert ladder != null;
     this.ladder = ladder;
+    checkRep();//mutator
+    return ;
   }
 
   @Override
